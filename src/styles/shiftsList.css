@@ -1,0 +1,259 @@
+/* .shiftsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  height: 100vh;
+}
+
+.shiftsSummary {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 15px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 25px;
+}
+
+.shiftsSummaryData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shiftIcon {
+  font-size: 20px;
+  color: teal;
+}
+
+.shiftsSummary h4 {
+  color: tan;
+  margin: 0;
+}
+
+.shiftsSummary span {
+  padding: 5px 0;
+}
+
+.shiftsList {
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 25px;
+}
+
+.shiftsList .head {
+  background-color: #f8fafa;
+  padding: 5px;
+  font-weight: bolder;
+}
+
+.shiftsList > div {
+  text-align: center;
+  border-bottom: 1px solid #bbb;
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .shiftsSummary {
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 25px;
+  }
+  .shiftsList {
+    width: 98%;
+  }
+} */
+
+.shiftsContainer {
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  height: 100vh;
+}
+
+.shifts {
+  width: 80%;
+}
+
+.sideBar {
+  width: 20%;
+  background-color: #161819;
+  box-shadow: 0 0 5px #d8d8d8;
+  height: 100%;
+  color: #fafafa;
+  /* border-top: 1px solid #a9a9a9; */
+  /* border-bottom: 1px solid #a9a9a9; */
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.sideBarIcon {
+  color: #996ff7;
+  font-size: 35px;
+}
+.sideBarHead {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.sideBarLogo {
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.border {
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  opacity: 0.5;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.purpleIcon {
+  color: #996ff7;
+  margin-right: 10px;
+  font-size: 28px;
+}
+.action {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.5s ease;
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: 300;
+}
+
+.action:hover {
+  transition: 0.5 ease;
+  background-color: #3a3a3a;
+  border-radius: 50px;
+}
+
+.returnButton {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shiftsLogo {
+  font-size: 40px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstLetter {
+  color: #996ff7;
+  display: inline-flex;
+  margin-left: 10px;
+  font-size: 45px;
+}
+
+.shiftsList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 5px;
+  background-color: transparent;
+  margin-top: 25px;
+}
+
+.shiftsList .head {
+  /* background-color: #f8fafa; */
+  padding: 5px;
+  font-weight: bolder;
+}
+
+.shiftsList > div {
+  text-align: center;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 10px;
+}
+
+.shiftsSummary {
+  width: 100%;
+  /* padding: 10px; */
+  display: flex;
+  justify-content: space-around;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+.shiftsSummaryData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shiftIcon {
+  font-size: 35px;
+  /* color: teal; */
+}
+
+.shiftsSummary h4 {
+  /* color: tan; */
+  margin: 0;
+  font-size: 30px;
+}
+
+.shiftsSummary span {
+  padding: 5px 0;
+}
+
+.pinkColor {
+  color: deeppink;
+}
+.blueColor {
+  color: deepskyblue;
+}
+
+.tealColor {
+  color: teal;
+}
+
+@media screen and (max-width: 600px) {
+  .shifts {
+    width: 100%;
+  }
+  .shiftsLogo {
+    font-size: 35px;
+  }
+  .sideBar {
+    display: none;
+  }
+}
