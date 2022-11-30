@@ -87,6 +87,13 @@
   width: 80%;
 }
 
+.day {
+  /* border-radius: 50%; */
+  /* height: 40px; */
+  font-weight: bolder;
+  color: steelblue;
+}
+
 .sideBar {
   width: 20%;
   background-color: #161819;
@@ -116,6 +123,16 @@
   margin-left: 15px;
   font-size: 20px;
   font-weight: bolder;
+}
+
+.icon {
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.3);
 }
 
 .border {
@@ -187,10 +204,14 @@
 .shiftsList {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-radius: 5px;
   background-color: transparent;
   margin-top: 25px;
+}
+
+.expend {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .shiftsList .head {
@@ -249,11 +270,19 @@
 @media screen and (max-width: 600px) {
   .shifts {
     width: 100%;
+    font-size: 12px;
   }
   .shiftsLogo {
     font-size: 35px;
   }
   .sideBar {
-    display: none;
+    transition: 0.3s;
+    position: fixed;
+    left: -50%;
+    top: 0;
+    width: 50%;
+    height: 90vh;
+    margin: 0;
+    /* display: none; */
   }
 }
