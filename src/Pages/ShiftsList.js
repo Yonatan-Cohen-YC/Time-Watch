@@ -6,6 +6,7 @@ import { IoTodaySharp } from "react-icons/io5";
 import { FaClock } from "react-icons/fa";
 import { BiEditAlt } from "react-icons/bi";
 import { AiOutlineFieldTime, AiOutlineDelete } from "react-icons/ai";
+import Dates from "../Common/Dates";
 
 import "../styles/shiftsList.css";
 
@@ -63,6 +64,8 @@ const ShiftsList = () => {
     // console.log(z);
   };
 
+  // const handleFilter = () => {}
+
   useEffect(() => {
     calculateTotalHouts();
   }, [localStorage.getItem("shifts"), calculateTotalHouts]);
@@ -90,6 +93,25 @@ const ShiftsList = () => {
               Delete Shift
             </span>
           </div>
+          <h3>Filter Dates</h3>
+          <div className="action">
+            <select defaultValue="2022">
+              {Dates.years.map((year, key) => (
+                <option key={key} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="action">
+            <select defaultValue="December">
+              {Dates.months.map((month, key) => (
+                <option key={key} value={month}>
+                  {month}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         <Link to="/">
           <div className="action returnButton">
@@ -104,31 +126,38 @@ const ShiftsList = () => {
           <span className="firstLetter">S</span>UMMARY{" "}
           <span className="firstLetter">{/* <GoChecklist /> */}</span>
         </h3>
-        <div className="shiftsSummary">
-          <div className="shiftsSummaryData">
-            <span>
-              <BsFillCheckCircleFill className="shiftIcon blueColor" />
-            </span>
-            <span>Shifts</span>
-            <h4 className="">{shifts?.length || 0}</h4>
-          </div>
+        {shifts.length > 0 ? (
+          <div className="shiftsSummary">
+            <div className="shiftsSummaryData">
+              <span>
+                <BsFillCheckCircleFill className="shiftIcon blueColor" />
+              </span>
+              <span>Shifts</span>
+              <h4 className="">{shifts?.length || 0}</h4>
+            </div>
 
-          <div className="shiftsSummaryData">
-            <span>
-              <IoTodaySharp className="shiftIcon pinkColor" />
-            </span>
-            <span>Days</span>
-            <h4 className="">{days.length}</h4>
-          </div>
+            <div className="shiftsSummaryData">
+              <span>
+                <IoTodaySharp className="shiftIcon pinkColor" />
+              </span>
+              <span>Days</span>
+              <h4 className="">{days.length}</h4>
+            </div>
 
-          <div className="shiftsSummaryData">
-            <span>
-              <FaClock className="shiftIcon tealColor" />
-            </span>
-            <span>Hours</span>
-            <h4 className="">{totalHours}</h4>
+            <div className="shiftsSummaryData">
+              <span>
+                <FaClock className="shiftIcon tealColor" />
+              </span>
+              <span>Hours</span>
+              <h4 className="">{totalHours}</h4>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div>
+            <h1>No Shifts yet</h1>
+          </div>
+        )}
+
         <div
           className={
             expend || expendDelete ? "expend shiftsList" : "shiftsList"
