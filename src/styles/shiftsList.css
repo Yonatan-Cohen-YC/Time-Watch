@@ -76,15 +76,33 @@
   }
 } */
 
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
 .shiftsContainer {
   width: 100%;
   display: flex;
   background-color: #fff;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.blurEffect {
+  filter: blur(2px);
+  pointer-events: none;
 }
 
 .shifts {
   width: 80%;
+  overflow-y: auto;
+}
+
+.boxMain {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .day {
@@ -106,7 +124,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: sticky;
+  left: 0;
+  top: 0;
 }
 
 .sideBarIcon {
@@ -231,6 +251,7 @@ select.decorated option:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .firstLetter {
@@ -247,6 +268,12 @@ select.decorated option:hover {
   border-radius: 5px;
   background-color: transparent;
   margin-top: 25px;
+}
+
+.monthLogo {
+  display: block;
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
 }
 
 .expend {

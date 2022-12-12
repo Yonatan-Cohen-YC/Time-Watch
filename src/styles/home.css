@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .timeWatchContainer {
   border-top: 5px solid #fff;
